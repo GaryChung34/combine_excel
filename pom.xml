@@ -16,6 +16,20 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>https://repository.aspose.com/repo/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-cells</artifactId>
+            <version>21.6</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -62,14 +76,14 @@
                         </goals>
                         <configuration>
                             <headerType>console</headerType>
-                            <jar>${project.build.directory}/${artifactId}-${version}-shaded.jar</jar>
-                            <outfile>${project.build.directory}/combine_excel.exe</outfile>
-                            <downloadUrl>http://java.com/download</downloadUrl>
+                            <jar>target/${artifactId}-${version}-shaded.jar</jar>
+                            <outfile>target/combine_excel.exe</outfile>
+<!--                            <downloadUrl>http://java.com/download</downloadUrl>-->
                             <classPath>
                                 <mainClass>org.example.Main</mainClass>
                                 <preCp>anything</preCp>
                             </classPath>
-                            <icon>application.ico</icon>
+<!--                            <icon>application.ico</icon>-->
                             <jre>
                                 <minVersion>1.6.0</minVersion>
                                 <jdkPreference>preferJre</jdkPreference>
@@ -92,18 +106,5 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>AsposeJavaAPI</id>
-            <name>Aspose Java API</name>
-            <url>https://repository.aspose.com/repo/</url>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>com.aspose</groupId>
-            <artifactId>aspose-cells</artifactId>
-            <version>21.6</version>
-        </dependency>
-    </dependencies>
+
 </project>
