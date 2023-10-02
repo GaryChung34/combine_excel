@@ -15,7 +15,7 @@ public class CombineService {
 
         System.out.println("discovering following excel file: ");
         List<File> excelFiles = getExcelFiles(files);
-        File number1 = excelFiles.stream().filter(e -> e.getName().contains("number1")).findFirst().orElse(null);
+        File number1 = excelFiles.stream().filter(e -> e.getName().contains("number1")).findFirst().orElseThrow(() -> new Exception("no number 1 file"));
         excelFiles.remove(number1);
         if (number1 != null) {
             System.out.println("found file number1");
